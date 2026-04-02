@@ -39,7 +39,7 @@ function enforceOwnerShopAccess(?int $requestedShopId = null): int {
   }
 
   if ($requestedShopId !== $sessionShopId) {
-    header("Location: /final_project/owner/owner-dashboard.php?shop_id=" . $sessionShopId);
+    header("Location: /queue/owner/owner-dashboard.php?shop_id=" . $sessionShopId);
     exit;
   }
 

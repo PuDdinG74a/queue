@@ -12,14 +12,14 @@ function currentUser(): ?array {
 }
 
 function redirectToLogin(): void {
-  header("Location: /final_project/login.php");
+  header("Location: /queue/login.php");
   exit;
 }
 
 function logoutAndRedirectToLogin(): void {
   session_unset();
   session_destroy();
-  header("Location: /final_project/login.php");
+  header("Location: /queue/login.php");
   exit;
 }
 
