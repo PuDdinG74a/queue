@@ -1,0 +1,1093 @@
+/* สีประจำ */
+:root {
+    --yellow: #FFCD22;
+    --gray: #7F7F7F;
+    --bg: #f3f3f3;
+}
+
+/* พื้นหลังรวม */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #333;
+}
+
+/* แถบด้านบน */
+.topbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.topbar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.topbar-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--yellow);
+    box-shadow: 0 0 0 4px rgba(255,205,34,0.3);
+}
+
+.topbar-title h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #222;
+}
+
+.topbar-title p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.topbar-tagline {
+    font-size: 12px;
+    color: #555;
+}
+
+/* เนื้อหาหลัก */
+.page {
+    max-width: 960px;
+    margin: 20px auto 32px;
+    padding: 0 18px;
+}
+
+/* การ์ดแนะนำด้านบน */
+.intro-card {
+    background: #ffffff;
+    padding: 16px 18px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 18px;
+}
+
+.intro-card h2 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.intro-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* การ์ดโดม */
+.zone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.zone-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex;
+}
+
+/* แถบเหลืองด้านข้าง */
+.zone-strip {
+    width: 8px;
+    background: var(--yellow);
+}
+
+/* เนื้อในการ์ด */
+.zone-body {
+    padding: 14px 16px 16px;
+    flex: 1;
+}
+
+.zone-label {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(127,127,127,0.08);
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.zone-body h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+}
+
+.zone-text {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ข้อมูลจำนวนห้อง */
+.zone-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.meta-item {
+    flex: 1;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+}
+
+.meta-label {
+    display: block;
+    font-size: 11px;
+    color: #777;
+}
+
+.meta-value {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* ปุ่มหลัก */
+.btn-main {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--yellow);
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.btn-main:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.22);
+}
+
+/* มือถือ */
+@media (max-width: 600px) {
+    .topbar-inner {
+        align-items: flex-start;
+    }
+
+    .zone-card {
+        flex-direction: row;
+    }
+
+    .zone-meta {
+        flex-direction: row;
+    }
+}
+/* ปุ่มย้อนกลับใน topbar (ถ้ายังไม่มี) */
+.topbar-back {
+    font-size: 13px;
+    text-decoration: none;
+    color: #7F7F7F;
+}
+.topbar-back:hover {
+    text-decoration: underline;
+}
+
+/* ===== ผังโดม 1 ===== */
+.dome-map {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* แถวบน/ล่าง */
+.map-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.map-label {
+    min-width: 90px;
+    font-size: 13px;
+    color: #555;
+}
+
+.map-stalls-row {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* กลางโดม */
+.map-middle {
+    display: flex;
+    gap: 18px;
+}
+
+/* บล็อกซ้าย / ขวา */
+.map-block,
+.map-block-right {
+    flex: 1;
+}
+
+.block-title {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+/* กริดในบล็อก */
+.block-grid {
+    display: grid;
+    gap: 6px;
+}
+
+.block-4x2 {
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+}
+
+.block-3x2 {
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+}
+
+/* กล่องล็อกร้าน */
+.stall-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: 0.2s;
+}
+
+.stall-box:hover {
+    border-color: #FFCD22;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+
+.stall-no {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFCD22;
+    line-height: 1;
+}
+
+.stall-name {
+    font-size: 11px;
+    color: #555;
+    margin-top: 2px;
+    text-align: center;
+}
+
+/* มือถือ */
+@media (max-width: 700px) {
+    .map-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .map-label {
+        margin-bottom: 4px;
+    }
+    .map-middle {
+        flex-direction: column;
+    }
+}
+
+/* =====================================================
+   DOME 1 (Scoped) — ไม่ชนกับหน้าอื่น
+   ต้องวาง "ท้ายสุด" ของ style.css
+===================================================== */
+
+.page-dome1{
+  background:#f5f5f5;                /* ✅ แก้: ให้ฟีลเหมือนโดม2 */
+  padding:18px;                       /* ✅ แก้: ให้เท่ากับโดม2 */
+  font-family:"Prompt", system-ui, sans-serif; /* ✅ เพิ่ม */
+}
+
+/* --- โครงหลักเดิมของ dome1 --- */
+.page-dome1 .plan-wrapper{
+  max-width:1400px;                   /* ✅ แก้: ให้กลางและกว้างเท่ากัน */
+  margin:0 auto;
+  border:1px solid #e9e9e9;           /* ✅ แก้: สไตล์เดียวกับโดม2 */
+  border-radius:18px;                 /* ✅ เพิ่ม */
+  box-shadow:0 10px 24px rgba(0,0,0,.06); /* ✅ เพิ่ม */
+  padding:20px 25px 40px;
+  background:#ffffff;                 /* ✅ แก้: ให้เหมือนโดม2-center */
+}
+
+.page-dome1 h1{
+  text-align:center;
+  font-size:22px;
+  margin:0 0 5px;
+}
+
+.page-dome1 .sub-title{
+  text-align:center;
+  font-size:14px;                     /* ✅ แก้: ให้ใกล้โดม2 */
+  margin-bottom:18px;
+  color:#666;                         /* ✅ แก้ */
+}
+
+.page-dome1 .top-row{
+  display:grid;
+  grid-template-columns:220px 1fr 220px;
+  align-items:center;
+  gap:20px;
+  margin-bottom:10px;
+}
+
+.page-dome1 .roof-box{
+  border:2px solid var(--gray);
+  border-radius:14px;                 /* ✅ แก้: ให้เหมือนโดม2 */
+  padding:8px 0;                      /* ✅ ปรับนิด */
+  text-align:center;
+  font-weight:600;                    /* ✅ ปรับ */
+  background:#fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06); /* ✅ เพิ่ม */
+}
+
+.page-dome1 .road-label{
+  border:2px solid var(--gray);
+  border-radius:12px;                 /* ✅ เพิ่ม */
+  padding:6px 0;                      /* ✅ ปรับ */
+  text-align:center;
+  font-size:12px;
+  background:#fff;
+}
+
+.page-dome1 .center-area{
+  display:grid;
+  grid-template-columns:220px 1fr 200px;
+  gap:10px;
+  margin-top:10px;
+}
+
+.page-dome1 .left-side{ margin-right:15px; }
+.page-dome1 .right-side-info{ margin-left:15px; }
+
+.page-dome1 .box-label{
+  border:2px solid var(--gray);
+  border-radius:14px;                 /* ✅ แก้ให้เหมือนโดม2 */
+  padding:10px;                       /* ✅ ปรับ */
+  text-align:center;
+  background:#fff;
+  font-size:12px;
+  margin-bottom:12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06); /* ✅ เพิ่ม */
+}
+.page-dome1 .box-label.big{
+  padding:30px 10px;
+  font-size:12px;
+}
+.page-dome1 .side-block{
+  border:2px solid var(--gray);
+  border-radius:14px;                 /* ✅ เพิ่ม */
+  background:#fff;
+  padding:10px;
+  text-align:center;
+  margin-bottom:10px;
+  font-size:12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06); /* ✅ เพิ่ม */
+}
+
+.page-dome1 .stalls-zone{ padding:0 10px; }
+
+/* --- กรอบกลาง (คุมไม่ให้ 19/30/41/52 ยื่น) --- */
+.page-dome1 .lane{
+  width:620px;
+  margin:0 auto;
+}
+
+/* --- กรอบยาว แถวบน + แถวล่าง --- */
+.page-dome1 .lane-wide{
+  width:860px;    /* ปรับได้ 820/900 */
+  margin:0 auto;
+}
+
+/* --- ระยะทางเดิน --- */
+.page-dome1 .walk-space{ height:25px; }
+.page-dome1 .walk-space-large{ height:35px; }
+
+/* --- กลางโดม --- */
+.page-dome1 .middle-rows{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  width:100%;
+}
+
+.page-dome1 .mid-col-left,
+.page-dome1 .mid-col-right{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.page-dome1 .block-vert-row{
+  display:flex;
+  gap:6px;
+  justify-content:flex-start;
+}
+
+.page-dome1 .block-3x2{
+  display:grid;
+  grid-template-columns:repeat(3,60px);
+  grid-auto-rows:60px;
+  gap:6px;
+  justify-content:flex-end; /* ชิดขวาใน lane */
+}
+
+/* --- แถวบน (ยาวขึ้น) --- */
+.page-dome1 .stalls-row-top{
+  display:flex;
+  justify-content:flex-start;
+  gap:18px;
+  margin:8px 0 6px;
+  flex-wrap:nowrap;
+}
+
+/* --- แถวล่าง (ยาวขึ้น) --- */
+.page-dome1 .bottom-row-wide{
+  display:flex;
+  justify-content:flex-start;
+  gap:6px;
+  flex-wrap:nowrap;
+  margin-top:10px;
+  width:100%;
+}
+
+/* --- กล่องล็อก --- */
+.page-dome1 .stall{
+  text-decoration:none;
+  color:#000;
+  border:2px solid var(--gray);
+  background:#fff;
+  border-radius:10px;                 /* ✅ ให้เหมือนโดม2 lock */
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.08); /* ✅ ปรับให้เนียน */
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:transform .08s ease, box-shadow .08s ease, border-color .15s;
+  font-size:10px;
+}
+
+.page-dome1 .stall-h{ width:60px; height:60px; }
+.page-dome1 .stall-v{ width:28px; height:75px; }
+.page-dome1 .stall-bottom{ width:32px; height:55px; font-size:9px; }
+
+/* ทำให้แถวบนยาวขึ้น */
+.page-dome1 .stall-top-long{
+  width:92px;
+  height:60px;
+}
+
+/* ทำให้แถวล่างยาวขึ้น */
+.page-dome1 .stall-bottom-long{
+  width:44px;
+  height:55px;
+  font-size:9px;
+}
+
+.page-dome1 .stall-number{
+  background:var(--gray);
+  color:#fff;
+  padding:3px 0;
+  font-size:12px;
+  font-weight:700;
+  text-align:center;
+}
+
+.page-dome1 .stall-bottom .stall-number{
+  font-size:10px;
+  padding:2px 0;
+}
+
+/* ชื่อร้านในโดม1 (กันชนกับ .stall-name ที่หน้าอื่น) */
+.page-dome1 .stall-name{
+  padding:4px 3px 6px;
+  line-height:1.2;
+  text-align:center;
+  font-size:10px;
+}
+
+.page-dome1 .stall:hover{
+  border-color:var(--yellow);
+  transform:translateY(-2px);
+  box-shadow:0 10px 18px rgba(0,0,0,.10);
+}
+
+.page-dome1 .special-stall{
+  background:var(--yellow);
+  border-color:var(--yellow);
+}
+.page-dome1 .special-stall .stall-number{
+  background:rgba(0,0,0,0.4);
+}
+
+.page-dome1 .bottom-road{
+  margin-top:22px;
+  border:2px solid var(--gray);
+  border-radius:12px;                 /* ✅ เพิ่ม */
+  padding:8px 0;                      /* ✅ ปรับ */
+  text-align:center;
+  font-size:13px;
+  background:#fff;
+}
+
+/* responsive */
+@media (max-width:980px){
+  .page-dome1 .center-area{ grid-template-columns:1fr; }
+  .page-dome1 .left-side,
+  .page-dome1 .right-side-info{ order:-1; }
+
+  .page-dome1 .lane,
+  .page-dome1 .lane-wide{ width:100%; }
+
+  .page-dome1 .stalls-row-top,
+  .page-dome1 .bottom-row-wide{ flex-wrap:wrap; }
+}
+/* ===== DOME1 POPUP / MODAL ===== */
+.page-dome1 .stall-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+.page-dome1 .stall-modal.is-open{ display:block; }
+
+.page-dome1 .stall-modal__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.45);
+}
+
+.page-dome1 .stall-modal__card{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, calc(100% - 24px));
+  background:#fff;
+  border-radius:16px;
+  padding:14px 14px 12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.page-dome1 .stall-modal__header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  padding-bottom:8px;
+  border-bottom:1px solid #eee;
+}
+.page-dome1 .stall-modal__title{ font-size:18px; font-weight:600; }
+.page-dome1 .stall-modal__sub{ font-size:13px; color:#666; margin-top:2px; }
+
+.page-dome1 .stall-modal__close{
+  border:0;
+  background:#f3f4f6;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.page-dome1 .stall-modal__body{ padding:12px 2px; }
+.page-dome1 .stall-modal__label{ font-size:12px; color:#666; }
+.page-dome1 .stall-modal__value{
+  font-size:16px;
+  font-weight:500;
+  margin-top:4px;
+  word-break: break-word;
+}
+
+.page-dome1 .stall-modal__actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  border-top:1px solid #eee;
+  padding-top:10px;
+}
+
+.page-dome1 .btn-lite,
+.page-dome1 .btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:500;
+}
+.page-dome1 .btn-lite{ background:#f3f4f6; color:#111; border:0; cursor:pointer; }
+.page-dome1 .btn-primary{ background:#111827; color:#fff; }
+
+
+/* ตัดชื่อร้านในช่องล็อกให้สั้น + ... */
+.page-dome1 .stall-name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* --- Modal --- */
+.page-dome1 .stall-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.page-dome1 .stall-modal.is-open{ display:block; }
+
+.page-dome1 .stall-modal__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.45);
+}
+
+.page-dome1 .stall-modal__card{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, calc(100% - 24px));
+  background:#fff;
+  border-radius:16px;
+  padding:14px 14px 12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.page-dome1 .stall-modal__header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  padding-bottom:8px;
+  border-bottom:1px solid #eee;
+}
+
+.page-dome1 .stall-modal__title{
+  font-size:18px;
+  font-weight:600;
+}
+
+.page-dome1 .stall-modal__sub{
+  font-size:13px;
+  color:#666;
+  margin-top:2px;
+}
+
+.page-dome1 .stall-modal__close{
+  border:0;
+  background:#f3f4f6;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.page-dome1 .stall-modal__body{ padding:12px 2px; }
+.page-dome1 .stall-modal__label{ font-size:12px; color:#666; }
+.page-dome1 .stall-modal__value{
+  font-size:16px;
+  font-weight:500;
+  margin-top:4px;
+  word-break: break-word;
+}
+
+.page-dome1 .stall-modal__actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  border-top:1px solid #eee;
+  padding-top:10px;
+}
+
+.page-dome1 .btn-lite,
+.page-dome1 .btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.page-dome1 .btn-lite{
+  background:#f3f4f6;
+  color:#111;
+  border:0;
+  cursor:pointer;
+}
+
+.page-dome1 .btn-primary{
+  background:#111827;
+  color:#fff;
+}
+
+/* =====================================================
+   DOME2 — RESPONSIVE SCALE FIX (KEEP CONNECTOR LEFT + NO CROP ON MOBILE)
+   วางท้ายสุดของ style.css (ทับของเดิมโดม2)
+===================================================== */
+
+.page-dome2{
+  background:#ffffff;
+  padding:20px;
+  font-family:"Prompt", system-ui, sans-serif;
+
+  /* แกนหลัก 17 ช่อง */
+  --col: 70px;
+  --gap: 8px;
+
+  /* ขนาดการ์ดล็อก */
+  --cell: 54px;
+
+  /* โซนกลาง 20 ช่อง (6+4+4+6) แต่กว้างรวมเท่ากับแกน 17 ช่อง */
+  --midcol: calc(
+    (
+      (var(--col) * 17) + (var(--gap) * 16)
+      - (var(--gap) * 19)
+    ) / 20
+  );
+
+  /* ด้านซ้าย/ขวา */
+  --sideL: 170px;
+  --sideR: 320px;
+}
+
+/* ✅ viewport: ให้มือถือเลื่อนได้ และใช้เป็นกรอบวัด scale */
+.page-dome2 .plan-viewport{
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+}
+
+/* ✅ กล่องสำหรับ “ย่อ/ขยายทั้งผัง” */
+.page-dome2 .plan-scale{
+  transform: scale(var(--scale, 1));
+  transform-origin: top left;
+  display: inline-block; /* สำคัญ: ให้ scrollWidth วัดได้ตรง */
+}
+
+/* ✅ กรอบเทา */
+.page-dome2 .plan-wrapper.dome2-ui{
+  /* เปลี่ยนจาก 95vw -> ใช้ขนาดตามเนื้อผังจริง */
+  width: max-content;
+  max-width: none;
+
+  margin: 0 auto;
+  border:2px solid #e2e2e2;
+  padding:18px 32px 22px;
+  background:#f5f5f5;
+  border-radius:14px;
+
+  overflow: visible; /* กันตัดบ้าน/ป้าย */
+}
+
+.page-dome2 .page-head{ position:relative; text-align:center; margin-bottom:16px; }
+.page-dome2 .back-link{
+  position:absolute; left:0; top:0;
+  text-decoration:none; color:#6b3bd6; font-weight:600;
+}
+.page-dome2 .head-title h1{ margin:0; font-size:22px; }
+.page-dome2 .head-title p{ margin:6px 0 0; font-size:13px; color:#444; }
+
+/* ✅ คง 3 คอลัมน์เสมอ => ทางเชื่อมอยู่ซ้ายตลอด */
+.page-dome2 .dome2-layout{
+  display:grid;
+  grid-template-columns: var(--sideL) auto var(--sideR);
+  gap:16px;
+  align-items:stretch;
+  justify-content:start;
+}
+
+/* ทางเชื่อม */
+.page-dome2 .left-connector{
+  display:flex;
+  align-items:stretch;
+}
+
+.page-dome2 .connector-box{
+  width:100%;
+  height:100%;
+  min-height: 540px;
+  border:2px solid #777;
+  border-radius:14px;
+  background:#fff;
+  padding:14px;
+  text-align:center;
+  font-weight:600;
+  line-height:1.35;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ผังขาว */
+.page-dome2 .map{
+  width:100%;
+  max-width: calc((var(--col) * 17) + (var(--gap) * 16) + 28px);
+  margin:0;
+  background:#fff;
+  border-radius:16px;
+  padding:14px;
+  border:1px solid #e6e6e6;
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+  overflow: visible;
+}
+
+/* หลังคา + กำแพง */
+.page-dome2 .roof-row{ display:flex; justify-content:center; gap:12px; margin:6px 0 10px; }
+.page-dome2 .roof{
+  width:min(320px, 42%);
+  height:54px;
+  border:2px solid #777; background:#eee; border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-weight:800;
+}
+.page-dome2 .wall{
+  height:20px;
+  border:2px solid #777; background:#dcdcdc; border-radius:8px;
+  display:flex; align-items:center; justify-content:center; font-weight:900;
+  margin-bottom:10px;
+}
+
+/* TOP ROW */
+.page-dome2 .row-top{
+  display:grid;
+  grid-template-columns: repeat(17, var(--col)) auto;
+  column-gap: var(--gap);
+  align-items:end;
+  margin-bottom:14px;
+}
+
+.page-dome2 .top-stalls{
+  grid-column: 1 / span 17;
+  display:grid;
+  grid-template-columns: repeat(17, var(--col));
+  gap: var(--gap);
+  align-items:end;
+}
+
+.page-dome2 .room-water{
+  width:var(--col);
+  height:var(--cell);
+  border:2px solid #777;
+  background:#fff;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  text-align:center;
+  padding:6px 4px;
+}
+
+/* ✅ บ้าน 2 หลังอยู่แถวเดียวกับห้องประปาเสมอ */
+.page-dome2 .top-houses{
+  grid-column: 18 / span 1;
+  display:flex;
+  gap:10px;
+  align-items:flex-end;
+  padding-bottom:2px;
+  white-space:nowrap;
+}
+
+.page-dome2 .house{
+  position:relative;
+  width:132px;
+  height:46px;
+  border:2px solid #777;
+  background:#fff;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  text-align:center;
+  padding:6px;
+  line-height:1.1;
+}
+.page-dome2 .house::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-18px;
+  transform:translateX(-50%);
+  width:0; height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom:18px solid #777;
+}
+.page-dome2 .house::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-15px;
+  transform:translateX(-50%);
+  width:0; height:0;
+  border-left:18px solid transparent;
+  border-right:18px solid transparent;
+  border-bottom:16px solid #fff;
+}
+
+/* MIDDLE AREA */
+.page-dome2 .row-mid{
+  width: calc((var(--col) * 17) + (var(--gap) * 16));
+  margin:0 0 12px 0;
+  display:grid;
+  grid-template-columns: repeat(20, var(--midcol));
+  gap: var(--gap);
+  align-items:start;
+  justify-content:start;
+}
+
+.page-dome2 .block{
+  border:2px solid #bdbdbd;
+  border-radius:14px;
+  padding:10px;
+  background:#fff;
+  display:grid;
+  gap: 8px;
+  justify-content:center;
+  align-content:start;
+}
+.page-dome2 .block.dark{ background:#d9d9d9; }
+
+.page-dome2 .block.g6{ grid-template-columns: repeat(6, var(--cell)); }
+.page-dome2 .block.g4{ grid-template-columns: repeat(4, var(--cell)); }
+
+.page-dome2 .block-left  { grid-column: 1 / span 6; }
+.page-dome2 .block-mid1  { grid-column: 7 / span 4; }
+.page-dome2 .block-mid2  { grid-column: 11 / span 4; }
+.page-dome2 .block-right { grid-column: 15 / span 6; }
+
+/* BOTTOM ROW */
+.page-dome2 .row-bottom{
+  display:grid;
+  grid-template-columns: repeat(17, var(--col));
+  gap: var(--gap);
+  align-items:start;
+  margin-bottom:12px;
+}
+
+.page-dome2 .room-electric{
+  grid-column: 1 / span 1;
+  width:var(--col);
+  height:var(--cell);
+  border:2px solid #777;
+  background:#fff;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  text-align:center;
+}
+
+.page-dome2 .bottom-stalls{
+  grid-column: 2 / span 16;
+  display:grid;
+  grid-template-columns: repeat(16, var(--col));
+  gap: var(--gap);
+}
+
+/* ถนน */
+.page-dome2 .roads{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; margin-top:6px; }
+.page-dome2 .road{
+  border:2px solid #aaa; background:#eee; border-radius:12px;
+  padding:10px 0; text-align:center; font-weight:900;
+}
+
+/* STALL CARD */
+.page-dome2 .d2-stall{
+  width:100%;
+  min-width: 0;
+  height: var(--cell);
+  border:2px solid #555;
+  border-radius:12px;
+  background:#fff;
+  text-decoration:none;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgba(0,0,0,.12);
+  transition:.12s;
+  display:flex;
+  flex-direction:column;
+}
+.page-dome2 .d2-stall:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(0,0,0,.16);
+  border-color:#ffcd22;
+}
+
+.page-dome2 .d2-number{
+  background:#7f7f7f;
+  color:#fff;
+  font-weight:900;
+  text-align:center;
+  padding:3px 0;
+  font-size:12px;
+  line-height:1;
+}
+
+.page-dome2 .d2-name{
+  padding:3px 4px;
+  font-size:10px;
+  font-weight:800;
+  color:#111;
+  line-height:1.05;
+
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  overflow:hidden;
+
+  text-align:center;
+  height:100%;
+  white-space:normal;
+}
+
+.page-dome2 .d2-stall.dark{ background:#bfbfbf; }
+.page-dome2 .d2-stall.dark .d2-number{ background:#555; }
+
+/* ❌ ไม่ใช้ media query ที่ทำให้คอลัมน์ยุบแล้ว */

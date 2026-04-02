@@ -1,0 +1,23 @@
+{
+  "name": "ระบบคิวร้านค้า",
+  "short_name": "QueueSystem",
+  "start_url": "/final_project/Frontend/index.php",
+  "scope": "/final_project/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FFCD22",
+  "icons": [
+    {
+      "src": "/final_project/manifest-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/final_project/manifest-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
