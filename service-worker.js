@@ -10,10 +10,10 @@ self.addEventListener("push", (event) => {
   let data = {
     title: "แจ้งเตือนคิว",
     body: "มีการอัปเดตสถานะคิวของคุณ",
-    url: "/final_project/Frontend/index.php",
+    url: "/queue/Frontend/index.php",
     tag: "queue-default",
-    icon: "/final_project/manifest-icon-192.png",
-    badge: "/final_project/manifest-icon-192.png"
+    icon: "/queue/manifest-icon-192.png",
+    badge: "/queue/manifest-icon-192.png"
   };
 
   try {
@@ -27,12 +27,12 @@ self.addEventListener("push", (event) => {
     body: data.body || "มีการอัปเดตสถานะคิวของคุณ",
     tag: data.tag || "queue-default",
     renotify: true,
-    icon: data.icon || "/final_project/manifest-icon-192.png",
-    badge: data.badge || "/final_project/manifest-icon-192.png",
+    icon: data.icon || "/queue/manifest-icon-192.png",
+    badge: data.badge || "/queue/manifest-icon-192.png",
     vibrate: [200, 100, 200],
     requireInteraction: true,
     data: {
-      url: data.url || "/final_project/Frontend/index.php"
+      url: data.url || "/queue/Frontend/index.php"
     }
   };
 
@@ -50,7 +50,7 @@ self.addEventListener("notificationclick", (event) => {
   const targetUrl =
     event.notification.data && event.notification.data.url
       ? event.notification.data.url
-      : "/final_project/Frontend/index.php";
+      : "/queue/Frontend/index.php";
 
   event.waitUntil(
     clients.matchAll({ type: "window", includeUncontrolled: true }).then((clientList) => {
@@ -58,7 +58,7 @@ self.addEventListener("notificationclick", (event) => {
         try {
           const clientUrl = new URL(client.url);
 
-          if ("focus" in client && clientUrl.pathname.startsWith("/final_project/")) {
+          if ("focus" in client && clientUrl.pathname.startsWith("/queue/")) {
             return client.focus().then(() => {
               if ("navigate" in client) {
                 return client.navigate(targetUrl);

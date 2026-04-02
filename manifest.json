@@ -1,8 +1,8 @@
 {
   "name": "ระบบคิวร้านค้า",
   "short_name": "QueueSystem",
-  "start_url": "/final_project/Frontend/index.php",
-  "scope": "/final_project/",
+  "start_url": "/queue/Frontend/index.php",
+  "scope": "/queue/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#FFCD22",
