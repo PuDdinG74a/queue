@@ -12,12 +12,12 @@ if (!empty($_SESSION['user']) && is_array($_SESSION['user'])) {
   $shopId = (int)($_SESSION['user']['shop_id'] ?? 0);
 
   if ($role === 'admin') {
-    header("Location: /final_project/admin/admin-dashboard.php");
+    header("Location: /queue/admin/admin-dashboard.php");
     exit;
   }
 
   if ($role === 'owner' && $shopId > 0) {
-    header("Location: /final_project/owner/owner-dashboard.php?shop_id=" . $shopId);
+    header("Location: /queue/owner/owner-dashboard.php?shop_id=" . $shopId);
     exit;
   }
 }
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       ];
 
       if ($user["role"] === "admin") {
-        header("Location: /final_project/admin/admin-dashboard.php");
+        header("Location: /queue/admin/admin-dashboard.php");
         exit;
       }
 
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           session_destroy();
           $error = "บัญชีร้านค้านี้ยังไม่ได้ผูกกับร้าน";
         } else {
-          header("Location: /final_project/owner/owner-dashboard.php?shop_id=" . $shopId);
+          header("Location: /queue/owner/owner-dashboard.php?shop_id=" . $shopId);
           exit;
         }
       }

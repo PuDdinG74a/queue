@@ -6,5 +6,5 @@ if (session_status() === PHP_SESSION_NONE) {
 session_unset();
 session_destroy();
 
-header("Location: /final_project/login.php");
+header("Location: /queue/login.php");
 exit;
