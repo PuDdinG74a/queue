@@ -29,7 +29,7 @@ try {
 |--------------------------------------------------------------------------
 */
 if (!defined('APP_BASE')) {
-  define('APP_BASE', '/final_project');
+  define('APP_BASE', '/queue');
 }
 
 /*
