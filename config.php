@@ -4,9 +4,9 @@
 date_default_timezone_set('Asia/Bangkok');
 
 $host = "localhost";
-$db   = "queue_system";
-$user = "root";
-$pass = "";
+$dbname = "queue_system";
+$username = "root";
+$password = "1234";
 $charset = "utf8mb4";
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
