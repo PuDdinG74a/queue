@@ -9,7 +9,7 @@ $username = "root";
 $password = "1234";
 $charset = "utf8mb4";
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
 $options = [
   PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -17,7 +17,7 @@ $options = [
 ];
 
 try {
-  $pdo = new PDO($dsn, $user, $pass, $options);
+  $pdo = new PDO($dsn, $username, $password, $options);
   $pdo->exec("SET time_zone = '+07:00'");
 } catch (PDOException $e) {
   die("เชื่อมต่อฐานข้อมูลไม่สำเร็จ: " . $e->getMessage());
